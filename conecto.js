@@ -1,7 +1,5 @@
 window.onload = function()
 {
-
-	alert("javascript");
 /*********** CANVASES and CONTEXTS *******************/
 	var boardSize = 400;
 	
