@@ -1,0 +1,38 @@
+<!DOCTYPE XHTML><!--HTML is incompatible with Firefox, but this returns errors that weren't there before-->
+
+<html>
+	<head>
+		<title>Conecto! Connection Puzzle Game (Free Web Version)</title>
+		<link href="conecto.css" rel="stylesheet" type="text/css">
+		<script src="conecto.js"></script>
+		<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+		<meta name="description" content="Free connect the lines puzzle game">
+		<meta name="keywords" content="Conecto,Puzzle,Game,Connect,Lines,Free,">
+		<meta name="author" content="Justin Krol">
+	</head>
+	<body bgcolor = "#999">
+		<div id="wrap">
+			<div id="main">
+				<img src="logo4.png" height="80" width="80" style="position:absolute; right:-200px; top:-200px;">
+				<div id="header">
+						<h1 class ="title">Conecto!</h1>
+						<p class="header">developed by Justin Krol</p>
+					
+					<img id="settings" src="gear.png" height="36" width="36" style="position:absolute; left:350px; top:110px;">
+					<img id="menu" src="menu4.png" height="36" width="36" style="position:absolute; left:300px; top:110px;">
+
+				</div><!--closing header-->
+				<div id="gameDiv">
+					<canvas id="headerBoard" src="conecto.js" >
+					</canvas>	
+					<canvas style="position:relative" id="gameBoard" src="conecto.js">
+					</canvas><!--closing gameBoard-->
+					<canvas style="position:relative" id="notifyBoard" src="conecto.js">
+					</canvas><!--closing gameBoard-->
+					<img id="logo" src="logo4.png" height="75" width="75" style="position:absolute; right:20px; bottom:5px;">
+				</div><!--closing game-->
+			</div><!--closing main-->
+		</div><!--closing wrap-->
+	</body>
+</html>
+

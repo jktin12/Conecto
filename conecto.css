@@ -1,0 +1,130 @@
+
+
+h1.title
+{
+	font-size: 24px;
+	text-align:center;
+	margin-bottom:3px;
+	padding-top:7px;
+	position: relative;
+	top: 25px;
+}
+
+p.header
+{
+	font-size: 12px;
+	text-align:center;
+	margin-top:5px;
+	padding-top:2px;
+	position: relative;
+	top: 20px;
+}
+
+
+
+/*Entire Page division*/
+#wrap
+{
+	/*background-image:url(../images/bg-tile.jpg);
+	background-position:top center;
+	background-repeat:repeat-y;*/
+	width:440px;
+	height:700px;
+	overflow: none;
+	margin:auto;
+	padding:0px;
+	position:relative;
+	min-height:100%;
+	top:20px;	
+}
+
+	/*Main division (All Content: inside box shadow)*/
+	#main
+	{
+		width:440px;
+		height:650px;
+		margin: auto;
+		padding: 0;
+		position:relative;
+		box-shadow:0px 4px 25px 2px black;
+		margin-bottom:100px;
+		/*background-color:#922A2A;*/
+		background-color: #ccc;
+	}
+	
+		#header
+		{
+			width:436px;
+			height:90px;
+			margin-bottom:8px;
+			border-bottom:3px solid #aaa;
+			border-right:3px solid #aaa;
+			border-bottom-right-radius: 75px;
+			background-color:#555;
+			box-shadow:2px 2px 4px -1px #000;
+		}
+
+		#gameDiv
+		{
+			width:421px;
+			height:536px;
+			border: 3px solid #0064C8;
+			background-color: #0064C8;
+			margin: 0px 6px;
+			border-top-right-radius: 5px;
+			cursor: auto;
+		}
+			#headerBoard
+			{
+				width:420px;
+				height:56px;
+				margin:0px;
+				background-color:#0064C8; /*#41ff11 (green)*/
+				/*border-top:3px solid #0064C8;
+				border-right:3px solid #0064C8;
+				border-left:3px solid #0064C8;*/
+				border-top-right-radius: 5px;
+
+			}
+				#gameTitle
+				{
+					float:left;
+					width:250px;
+					height:40px;
+					border:none;
+					margin-bottom:3px;
+					/*box-shadow:2px 2px 4px -1px #000;*/
+				}
+				#gameInfo
+				{
+					float:left;
+					width:100px;
+					height:40px;
+					border:none;
+					margin-bottom:3px;
+
+					/*box-shadow:2px 2px 4px -1px #000;*/
+				}
+
+			#gameBoard
+			{
+				width:420px;
+				height:400px;
+				position:relative;
+				margin: 0px;
+				/*box-shadow:0px 4px 25px 2px black;*/
+				border-top: 4px solid #00815D;
+				border-bottom: 4px solid #00815D;
+				/*border-right:3px solid #0064C8;
+				border-bottom:3px solid #0064C8;
+				border-left:3px solid #0064C8;*/
+			}
+
+			#notifyBoard
+			{
+				width:420px;
+				height:75px;
+				margin:0px;
+				background-color:"green"; /*#41ff11 (green)*/
+
+			}
