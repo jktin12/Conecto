@@ -103,6 +103,9 @@ window.onload = function()
 		var bonusSize = 10;
 		level[7][0] = new Array(/*row1*/2,1,1,2,1,1,2,1,1,1,/*row1*/3,2,1,0,1,2,1,2,2,2,/*row1*/2,0,3,2,4,1,2,2,1,3,/*row1*/3,2,1,0,1,1,2,1,2,1,/*row1*/2,1,2,2,1,0,3,3,1,0,/*row1*/1,1,0,1,4,2,1,2,3,2,/*row1*/2,3,3,1,3,2,1,1,4,2,/*row1*/1,1,3,2,1,0,1,2,1,0,/*row1*/1,2,4,1,1,2,1,1,2,2,/*row1*/2,2,1,1,1,1,3,1,2,2);
 
+
+	/** These level arrays are generated using a generator I built in Java **/
+
 	/** Size: 3x3 ***/ //24 levels
 		var three = 24;
 		/******/
