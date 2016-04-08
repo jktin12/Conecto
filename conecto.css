@@ -44,7 +44,7 @@ p.announcement
 	margin:auto;
 	padding:0px;
 	position:relative;
-	min-height:100%;
+	/*min-height:100%;*/
 	top:20px;	
 }
 
@@ -52,14 +52,14 @@ p.announcement
 	#main
 	{
 		width:440px;
-		height:650px;
-		margin: auto;
-		padding: 0;
+		height:545px;
+		/*margin: auto;*/
+		padding: 10;
 		position:relative;
 		box-shadow:0px 4px 25px 2px black;
-		margin-bottom:100px;
+		/*margin-bottom:100px;*/
 		/*background-color:#922A2A;*/
-		background-color: #ccc;
+		/*background-color: #ccc;*/
 	}
 	
 		#header
@@ -77,11 +77,12 @@ p.announcement
 		#gameDiv
 		{
 			width:421px;
-			height:536px;
-			border: 3px solid #0064C8;
-			background-color: #0064C8;
-			margin: 0px 6px;
-			border-top-right-radius: 5px;
+			/*height:536px;*/
+			height:500px;
+			/*border: 3px solid #0064C8;
+			background-color: #0064C8;*/
+			/*margin: 0px 6px;*/
+			border-radius: 4px;
 			cursor: auto;
 		}
 			#headerBoard

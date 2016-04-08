@@ -2,27 +2,62 @@
 
 <html>
 	<head>
-		<title>Conecto! Connection Puzzle Game (Free Web Version)</title>
+		<title>Conecto! Connection Puzzle Game</title>
 		<link href="conecto.css" rel="stylesheet" type="text/css">
 		<script src="conecto.js"></script>
 		<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
 		<meta name="description" content="Free connect the lines puzzle game">
 		<meta name="keywords" content="Conecto,Puzzle,Game,Connect,Lines,Free,">
 		<meta name="author" content="Justin Krol">
+
+
+
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+
+    <!-- Boostrap -->
+ <!--   <link rel="stylesheet" href="simplex-bootstrap.css" /> -->
+    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+    <!-- Latest compiled and minified CSS -->
+
+    <!-- Font-awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    			<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+
 	</head>
-	<body bgcolor = "#999">
+	<body>
+		<!-- Header -->
+    <nav class="navbar navbar-default">
+        <div id='navbar-content' class="container-fluid">
+            <div class="navbar-header">
+                <a href="https://jktin12.github.io" target="_blank"> <img id="logo" src="logo4.png" height="70"> </a>
+            </div>
+            <!--<ul class="nav navbar-nav navbar-right">
+              <li><a href="http://www.legacycan.ca/" target="_blank">Conecto</a></li>
+          	</ul>-->
+        </div>
+    </nav>
 		<div id="wrap">
 			<div id="main">
 				<img src="logo4.png" height="80" width="80" style="position:absolute; right:-200px; top:-200px;">
-				<div id="header">
+<!--				<div id="header">
 						<h1 class ="title">Conecto!</h1>
-						<p class="header">developed by Justin Krol</p>
-						<p class="announcement"></p>
-					
-					<img id="settings" src="gear.png" height="36" width="36" style="position:absolute; left:350px; top:110px;">
-					<img id="menu" src="menu4.png" height="36" width="36" style="position:absolute; left:300px; top:110px;">
 
+						<p class="announcement"></p>
 				</div><!--closing header-->
+				<div>
+					<img id="settings" src="gear.png" height="36" width="36" style="position:absolute; left:350px; top:20px;">
+					<img id="menu" src="menu4.png" height="36" width="36" style="position:absolute; left:300px; top:20px;">
+				</div>
 				<div id="gameDiv">
 					<canvas id="headerBoard" src="conecto.js" >
 					</canvas>	
@@ -34,6 +69,27 @@
 				</div><!--closing game-->
 			</div><!--closing main-->
 		</div><!--closing wrap-->
+			<div id="footer" class="col-sm-12 info">
+				<h3 style="text-align:center">Contact Me</h3>
+				<div class="contact-links">
+					<h4 class="email">
+						<a href="mailto:justinkrol11@gmail.com">justinkrol11@gmail.com</a>
+						<br>613-709-7571
+					</h4>
+					<p>
+						<a href="http://github.com/jktin12">GitHub</a>&nbsp;&bull;
+						<a href="files/resume.pdf" target="_blank">Resum&eacute;</a>
+					</p>
+					<a href="https://ca.linkedin.com/in/justinkrol">
+						<img class="icon-links" src="assets/images/linkedin-icon.png">
+					</a>
+					<a href="http://github.com/jktin12">
+						<img class="icon-links" src="assets/images/github-icon.png">
+					</a>
+				</div>
+				<p id="copyright" style="text-align: right">&#169; 2016 Designed by Justin Krol</p>	
+			</div> <!-- end of footer -->
+			
 	</body>
 </html>
 
