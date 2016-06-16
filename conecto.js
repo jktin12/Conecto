@@ -2,7 +2,7 @@ window.onload = function()
 {
 /*********** CANVASES and CONTEXTS *******************/
 	var boardSize = 400;
-	
+
 	/*** HEADER CANVAS ***/
 	var headerCanvas = document.getElementById('headerBoard');
 	headerCanvas.onselectstart = function () { return false; }//no double click highlighting
@@ -10,7 +10,7 @@ window.onload = function()
 	headerCanvas.height = 90;
 		/*** Context for header canvas ***/
 		var ctx2 = headerCanvas.getContext('2d');
-	
+
 	/*** GAME CANVAS ***/
 	var canvas = document.getElementById('gameBoard');
 	canvas.onselectstart = function () { return false; }//no double click highlighting
@@ -27,8 +27,8 @@ window.onload = function()
 		/*** Context for game canvas ***/
 		var ctx3 = notifyCanvas.getContext('2d');
 
-/*********** VARIABLES, ETC. *************************/		
-	
+/*********** VARIABLES, ETC. *************************/
+
 	/*** COOKIE INFORMATION ***/
 	var cPname = "gameProgress";
 	var cDuration = 365; //days
@@ -49,7 +49,7 @@ window.onload = function()
 	var confirm = false, progressMade = false;
 	var gridSizeButtonsPrint = 3;
 
-	/*** GAME INFORMATION ***/	
+	/*** GAME INFORMATION ***/
 	var clickAllowed = true;
 	var gridSize = 3;
 	var levelToPlay = 1;
@@ -71,7 +71,7 @@ window.onload = function()
 	var buttonFillColor = "yellow";
 	var buttonHighColor = threeC;
 	var completedColor = "#19cf59";
-	
+
 	var buttonBorderColor = "777";
 	var squareFillColor = "yellow";
 	var squareNoColor = "yellow"; //#fed700
@@ -83,7 +83,7 @@ window.onload = function()
 	var borderWidth = 2;	//border width around squares
 	var DEFAULT = 1;		//default line width
 
-	/******* FILL CANVAS ********/	
+	/******* FILL CANVAS ********/
 	ctx.fillStyle = "#999";		//background fill color
 	ctx.fillRect(0,0, canvas.width, canvas.height);		//fills the background with the above color
 
@@ -91,7 +91,7 @@ window.onload = function()
 
 	/*** CREATING ARRAY FOR LEVELS ***/
 		var numSizes = 4; //smallest is 3x3 (therefore, 5 sizes are 3x3, ..., 7x7)
-		
+
 		var level = new Array();
 		for(var m = 0; m < numSizes; m++){
 			level[m] = new Array();
@@ -135,9 +135,9 @@ window.onload = function()
 		level[0][23] = new Array(/*row1*/4,2,4,/*row2*/3,1,2,/*row3*/3,1,3);
 
 
-				
 
-	/** Size: 4x4 ***/ 
+
+	/** Size: 4x4 ***/
 		var four = 24;
 		/*******/
 		level[1][0] = new Array(/*row1*/2,1,2,2,/*row2*/1,3,1,2,/*row3*/1,4,4,1,/*row4*/2,3,3,3);
@@ -164,12 +164,12 @@ window.onload = function()
 		level[1][21] = new Array(/*row1*/2,3,1,2,/*row2*/1,1,2,2,/*row3*/2,0,3,3,/*row4*/1,1,1,4);
 		level[1][22] = new Array(/*row1*/1,2,4,2,/*row2*/2,1,3,1,/*row3*/3,1,1,2,/*row4*/1,1,2,1);
 		level[1][23] = new Array(/*row1*/3,2,3,1,/*row2*/3,2,4,3,/*row3*/4,3,4,3,/*row4*/2,1,3,4);
-		
-
-				
 
 
-	/** Size: 5x5 ***/ 
+
+
+
+	/** Size: 5x5 ***/
 		var five = 24;
 		/********/
 		level[2][0] = new Array(/*row1*/3,2,3,3,3,/*row2*/2,1,3,1,1,/*row3*/3,4,3,2,2,/*row4*/2,2,1,3,1,/*row5*/3,1,2,1,1);
@@ -196,8 +196,8 @@ window.onload = function()
 		level[2][21] = new Array(/*row1*/3,2,3,2,2,/*row2*/3,1,1,1,0,/*row3*/3,3,1,1,1,/*row4*/3,1,2,1,3,/*row5*/2,1,3,1,3);
 		level[2][22] = new Array(/*row1*/3,1,2,1,1,/*row2*/3,4,2,1,0,/*row3*/1,3,3,2,2,/*row4*/2,3,4,2,2,/*row5*/2,3,4,2,1);
 		level[2][23] = new Array(/*row1*/2,0,2,2,3,/*row2*/3,2,1,3,1,/*row3*/3,2,1,2,1,/*row4*/3,2,3,3,2,/*row5*/3,2,1,1,3);
-			
-				
+
+
 
 	/** Size: 6x6 ***/
 		var six = 24;
@@ -225,12 +225,12 @@ window.onload = function()
 		level[3][20] = new Array(/*row1*/1,3,3,2,3,2,/*row2*/0,2,2,1,1,2,/*row3*/1,1,1,3,1,2,/*row4*/2,1,1,1,4,4,/*row5*/1,2,1,3,1,3,/*row6*/0,3,2,4,2,1);
 		level[3][21] = new Array(/*row1*/3,2,3,3,3,0,/*row2*/1,2,3,2,3,3,/*row3*/2,1,3,3,3,1,/*row4*/3,4,2,4,3,2,/*row5*/3,4,3,4,2,2,/*row6*/0,1,3,4,2,2);
 		level[3][22] = new Array(/*row1*/1,2,1,3,1,0,/*row2*/1,3,1,3,3,1,/*row3*/3,4,1,0,1,3,/*row4*/1,4,3,1,0,2,/*row5*/2,3,2,1,2,3,/*row6*/0,2,1,2,2,3);
-		level[3][23] = new Array(/*row1*/1,3,3,1,3,2,/*row2*/0,1,1,1,4,3,/*row3*/1,1,2,1,1,2,/*row4*/2,2,2,3,3,3,/*row5*/2,1,3,1,1,2,/*row6*/1,3,1,1,2,4);		
-		
+		level[3][23] = new Array(/*row1*/1,3,3,1,3,2,/*row2*/0,1,1,1,4,3,/*row3*/1,1,2,1,1,2,/*row4*/2,2,2,3,3,3,/*row5*/2,1,3,1,1,2,/*row6*/1,3,1,1,2,4);
 
 
 
-				
+
+
 
 
 /*********** COOKIES (Used to save progress between visits on same browser) ***********/
@@ -310,7 +310,7 @@ function ProgressCookie() // simply a string that uses a combination of symbols 
 			//alert("index: "+currentIndex+ "; length: "+cookieString.length+"; cookieString:"+cookieString);
 			gridString=""; levelString="";
 			if(cookieString.charAt(currentIndex) == ":"){
-				
+
 				gridString += cookieString.charAt(currentIndex-1);
 				levelString += cookieString.charAt(currentIndex+1);
 				if(cookieString.charAt(currentIndex+2) != ","){
@@ -328,7 +328,7 @@ function ProgressCookie() // simply a string that uses a combination of symbols 
 }
 
 /*********** CLASSES *********************************/
-	
+
 	function getNumberLevels(size)
 	{
 		if(size == 3)
@@ -396,7 +396,7 @@ function ProgressCookie() // simply a string that uses a combination of symbols 
 					ctx.fillStyle = BGColor;
 				}
 			}
-			else{	
+			else{
 				if(selected){
 					ctx.fillStyle = buttonHighColor;
 				}
@@ -404,7 +404,7 @@ function ProgressCookie() // simply a string that uses a combination of symbols 
 					ctx.fillStyle = BGcolor;
 				}
 			}
-				
+
 			/*** Button Outline Colour/Width ***/
 			ctx.strokeStyle = buttonBorderColor;
 			ctx.lineWidth = borderWidth;
@@ -443,7 +443,7 @@ function ProgressCookie() // simply a string that uses a combination of symbols 
 			if(!fromCookie && !loop){
 				gameCookie.addProgress(gridSize, levelToPlay);
 			}
-			
+
 		}
 		this.getComplete = function()
 		{
@@ -453,22 +453,13 @@ function ProgressCookie() // simply a string that uses a combination of symbols 
 
 
 	function Square(type, xPos, yPos)	//sets vertices according to type
-	{													
-		if(type == 1){
-				this.top = true; this.right = true; this.bottom = false; this.left = false;}	
-			else if(type == 2){
-				this.top = true; this.right = false; this.bottom = true; this.left = false;}
-			else if(type == 3){
-				this.top = true; this.right = true; this.bottom = false; this.left = true;}
-			else if(type == 4){
-				this.top = true; this.right = true; this.bottom = true; this.left = true;}
-			else{
-				this.top = false; this.right = false; this.bottom = false; this.left = false;}
+	{
+
 
 		this.changeType = function(newType)	//used when the level changes
 		{
 			if(newType == 1){
-				this.top = true; this.right = true; this.bottom = false; this.left = false;}	
+				this.top = true; this.right = true; this.bottom = false; this.left = false;}
 			else if(newType == 2){
 				this.top = true; this.right = false; this.bottom = true; this.left = false;}
 			else if(newType == 3){
@@ -478,7 +469,9 @@ function ProgressCookie() // simply a string that uses a combination of symbols 
 			else{
 				this.top = false; this.right = false; this.bottom = false; this.left = false;}
 		}
-		
+
+    this.changeType(type);
+
 		this.rotate = function()	//rotates the values of the calling Square
 		{
 			var extra = this.top;
@@ -503,7 +496,7 @@ function ProgressCookie() // simply a string that uses a combination of symbols 
 
 			//If there is a vertex in a particular square, then the line from that vertex to the center will be drawn
 			if(this.top)
-				this.line(lColor, xOffset+lineLength, yOffset, xOffset+lineLength, yOffset+lineLength);	
+				this.line(lColor, xOffset+lineLength, yOffset, xOffset+lineLength, yOffset+lineLength);
 			if(this.right)
 				this.line(lColor, xOffset+lineLength, yOffset+lineLength, xOffset+cellSize, yOffset+lineLength);
 			if(this.bottom)
@@ -521,8 +514,8 @@ function ProgressCookie() // simply a string that uses a combination of symbols 
 			ctx.stroke();
 		};
 	}
-	
-	function getMousePos(canvas, event) 
+
+	function getMousePos(canvas, event)
 	{
 		var rect = canvas.getBoundingClientRect();
 		return {x: event.clientX - rect.left, y: event.clientY - rect.top};
@@ -570,7 +563,7 @@ function ProgressCookie() // simply a string that uses a combination of symbols 
 				count++;
 			}
 			while(count<=(gridSize-3));
-			
+
 			this.printHeader();
 			ctx2.font="20px Arial";
 			ctx2.fillStyle = "black";
@@ -682,7 +675,7 @@ function ProgressCookie() // simply a string that uses a combination of symbols 
 			enterNeeded = true;
 			var enterPressed = false;
 			xBox = 0, yBox = 0, widthBox = boardSize, heightBox = 70;
-			
+
 			ctx3.fillStyle = "red";
 			ctx3.fillRect(xBox, yBox, widthBox, heightBox);
 			ctx3.strokeStyle = "red";
@@ -709,7 +702,7 @@ function ProgressCookie() // simply a string that uses a combination of symbols 
 			else{
 				gridSizeButtonsPrint = 3;
 			}
-			
+
 			ctx.canvas.width = ctx.canvas.width; //clears the gameBoard canvas
 			ctx.fillStyle = "#003498";
 			ctx.fillRect(0,0,boardSize,boardSize);
@@ -739,7 +732,7 @@ function ProgressCookie() // simply a string that uses a combination of symbols 
 			ctx.canvas.width = ctx.canvas.width; //clears the gameBoard canvas
 			ctx.fillStyle = "yellow";
 			ctx.fillRect(0,0,boardSize,boardSize);
-			
+
 			xBox = 60, yBox = 110, widthBox = 280, heightBox = 140;
 			instructX = xBox+30, instructY = yBox+heightBox+20, instructW = 100, instructH = 30;
 			playX = instructX + instructW + 20, playY = instructY; playW = 100, playH = 30;
@@ -758,7 +751,7 @@ function ProgressCookie() // simply a string that uses a combination of symbols 
 			ctx.fillText("begin.", xBox+10, yBox+72);
 			ctx.fillText("", xBox+10, yBox+92);
 
-			
+
 			ctx.fillStyle = "red";
 			ctx.fillRect(instructX, instructY, instructW, instructH);
 			ctx.fillRect(playX, playY, playW, playH);
@@ -781,7 +774,7 @@ function ProgressCookie() // simply a string that uses a combination of symbols 
 			ctx.canvas.width = ctx.canvas.width; //clears the gameBoard canvas
 			ctx.fillStyle = "yellow";
 			ctx.fillRect(0,0,boardSize,boardSize);
-			
+
 			xBox = 60, yBox = 110, widthBox = 280, heightBox = 140;
 
 			ctx.fillStyle = "#003498";
@@ -818,7 +811,7 @@ function ProgressCookie() // simply a string that uses a combination of symbols 
 			ctx.canvas.width = ctx.canvas.width; //clears the gameBoard canvas
 			ctx.fillStyle = "yellow";
 			ctx.fillRect(0,0,boardSize,boardSize);
-			
+
 			xBox = 60, yBox = 110, widthBox = 280, heightBox = 140;
 
 			ctx.fillStyle = "#003498";
@@ -851,7 +844,7 @@ function ProgressCookie() // simply a string that uses a combination of symbols 
 
 			var xFound = false, yFound = false;
 			var a = 1, b = 1;
-			
+
 			var cellSizeOffsetX = cellSize+borderWidth; //includes the width of the borders of each square
 			var cellSizeOffsetY = cellSize;
 
@@ -860,8 +853,8 @@ function ProgressCookie() // simply a string that uses a combination of symbols 
 
 			//alert(clickX+","+clickY);
 			do 													//loop in which the value of a is incremented by 1
-			{													//continues until the row has been found (index is a-1)		
-				if(clickX/cellSizeOffsetX < a) 
+			{													//continues until the row has been found (index is a-1)
+				if(clickX/cellSizeOffsetX < a)
 	    		{
 		    		do 											//loop in which the value of b is incremented by 1
 		    		{ 											//continues until the column has been found (index is b-1)
@@ -886,7 +879,7 @@ function ProgressCookie() // simply a string that uses a combination of symbols 
 			    			xFound = true;
 			    		}
 	    	}
-	    	while(!xFound); 
+	    	while(!xFound);
 		}
 
 		this.clickButton = function(x,y)
@@ -932,14 +925,14 @@ function ProgressCookie() // simply a string that uses a combination of symbols 
 
 			if(!gFound){
 				do 													//loop in which the value of a is incremented by 1
-				{													//continues until the row has been found (index is a-1)		
-					if(x/lbSize < lC) 
+				{													//continues until the row has been found (index is a-1)
+					if(x/lbSize < lC)
 		    		{
 			    		do 											//loop in which the value of b is incremented by 1
 			    		{ 											//continues until the column has been found (index is b-1)
 				    		if(((y-gbSize)-10)/lbSize < lR){					//if the pixel y coordinate/cellSize of the click is less than b, the b value is the number of the column
 				    			//alert(lC+(6*(lR-1)));
-				    			
+
 						    	ctrl.changeLevel(lC+(6*(lR-1)));
 								ctrl.changeValues();
 								ctrl.reprint(squareFillColor, lineFillColor, lineFillWidth); //reprints after the level changes
@@ -960,11 +953,11 @@ function ProgressCookie() // simply a string that uses a combination of symbols 
 				    			cFound = true;
 				    		}
 		    	}
-		    	while(!cFound); 
+		    	while(!cFound);
 		    }
-		}	
+		}
 	}
-  	
+
   	function CheckWin()
   	{
   		this.checkConnect = function()
@@ -989,7 +982,7 @@ function ProgressCookie() // simply a string that uses a combination of symbols 
 		  				leftCol = true;}
 		  			if(currentC == gridSize-1){
 		  				rightCol = true;}
-		  			
+
 		  			/* below could be made more elegent by making a universal checker
 	  				requiring certain parameters, not necessary at the moment, but
 	  				possibly if the game becomes more complicated, it will need to be. */
@@ -1021,15 +1014,15 @@ function ProgressCookie() // simply a string that uses a combination of symbols 
 	  						}
 	  					}
 	  				}
-	  				currentC++;	
+	  				currentC++;
 	  			}
 	  			while(finished == true && currentC < gridSize);
 	  			currentC = 0;
 	  			currentR++;
-  				
-  			} 
+
+  			}
   			while(finished == true && currentR < gridSize);
-  			
+
   			if(finished)
   			{
   				return(true); //i.e. if all the squares are checked and none of them have unpaired vertices
@@ -1043,9 +1036,9 @@ function ProgressCookie() // simply a string that uses a combination of symbols 
 
 /*********** EXECUTES ON LOAD OF WINDOW **************/
 	check = new CheckWin();
-	ctrl = new ControlScreen();		
+	ctrl = new ControlScreen();
 	ctrl.printHeader();
-		
+
 	xBox = 0, yBox = 0, widthBox = boardSize, heightBox = 70;
 	ctx3.fillStyle = "red";
 	ctx3.fillRect(xBox, yBox, widthBox, heightBox);
@@ -1105,7 +1098,7 @@ function ProgressCookie() // simply a string that uses a combination of symbols 
 
 
 
-	
+
 	/********* PROGRESS TRACKING ***********/
 	//sets previously completed levels to complete
 	if(gameCookie.getString() != null && gameCookie.getString() != "" && gameCookie.getString() != "*"){
@@ -1129,7 +1122,7 @@ function ProgressCookie() // simply a string that uses a combination of symbols 
 				//prevMode = mode;
 				changeMode(2);
 				ctrl.printSettings();
-				
+
 			}
 			else{
 				//mode = prevMode;
@@ -1220,7 +1213,7 @@ function ProgressCookie() // simply a string that uses a combination of symbols 
 				ctrl.changeGrid(10);
 				ctrl.changeLevel(1);
 				ctrl.changeValues();
-				ctrl.reprint(squareFillColor, lineFillColor, lineFillWidth); //reprints after the level changes		
+				ctrl.reprint(squareFillColor, lineFillColor, lineFillWidth); //reprints after the level changes
 			}
 
 		}
@@ -1245,18 +1238,18 @@ function ProgressCookie() // simply a string that uses a combination of symbols 
 
 		var confirm = false;
 		var gameWon = false;
-				
+
 
 
 	/*** CANVAS CLICK ***/
-		canvas.addEventListener("click", function(event) 
+		canvas.addEventListener("click", function(event)
 		{
 	    	if(cookieFound){
 	    		removeWelcome();
 	    	}
 
 	    	var mousePos = getMousePos(canvas, event);
-	    	// canvas x is mousePos.x 
+	    	// canvas x is mousePos.x
 	    	// canvas y is mousePos.y
 
 	    	switch(mode)
@@ -1265,12 +1258,12 @@ function ProgressCookie() // simply a string that uses a combination of symbols 
 		    	//if the instructions button was clicked
 		    	if((instructX<mousePos.x && mousePos.x<(instructX+instructW)) && (instructY<mousePos.y &&mousePos.y<(instructY+instructH)))
 		    	{
-			    	if(!confirm){	
+			    	if(!confirm){
 			    		if(instructionsPrinted){
 			    			ctrl.printMenu();
 			    			instructionsPrinted = false;
 			    		}
-			    		else{	
+			    		else{
 			    			ctrl.printInstructions();
 			    		}
 			    	}
@@ -1289,7 +1282,7 @@ function ProgressCookie() // simply a string that uses a combination of symbols 
 		    	}
 		    	else if((playX<mousePos.x && mousePos.x<(playX+playW)) && (playY<mousePos.y&& mousePos.y<(playY+playH)))
 		    	{
-			    	if(!confirm){	
+			    	if(!confirm){
 			    		mode = 3;
 			    		if(!clickAllowed){
 							//alert("line 1355");
@@ -1314,7 +1307,7 @@ function ProgressCookie() // simply a string that uses a combination of symbols 
 			    	}
 		    	}
 
-		    	break; 
+		    	break;
 		    case 2: //settings
 		    	//alert("settings");
 		    	ctrl.clickButton(mousePos.x, mousePos.y);
@@ -1326,7 +1319,7 @@ function ProgressCookie() // simply a string that uses a combination of symbols 
 			    	gameWon = check.checkConnect();
 			    	if(gameWon){
 				    	if(gridSize != bonusSize)
-				    	{	
+				    	{
 				    		levelButton[gridSize-3][levelToPlay-1].complete(true, false, false);
 				    		clickAllowed = false;
 							//checks if a grid size is complete and sets the button accordingly
@@ -1349,7 +1342,7 @@ function ProgressCookie() // simply a string that uses a combination of symbols 
 							else{
 								//add delay
 								if(sizeButton[gridSize-3].getComplete()){
-									ctrl.congratulate(2,"Congratulations! You have completed the "+gridSize+"x"+gridSize+" package.","Put your skills to the test and try "+(gridSize+1)+"x"+(gridSize+1)+"!");	
+									ctrl.congratulate(2,"Congratulations! You have completed the "+gridSize+"x"+gridSize+" package.","Put your skills to the test and try "+(gridSize+1)+"x"+(gridSize+1)+"!");
 								}
 								else{
 									ctrl.congratulate(2,"Congratulations! You beat the level.  Click the settings","icon to finish levels from this package, or continue to "+(gridSize+1)+"x"+(gridSize+1)+"!");
@@ -1375,7 +1368,7 @@ function ProgressCookie() // simply a string that uses a combination of symbols 
 
 		notifyCanvas.addEventListener("click", function(event)
 		{
-			
+
 			if(enterNeeded){
 				//enterPressed = true;
 				if(typeFinished == 1)
@@ -1385,11 +1378,11 @@ function ProgressCookie() // simply a string that uses a combination of symbols 
 					ctrl.changeValues();
 					ctrl.reprint(squareFillColor, lineFillColor, lineFillWidth); //reprints after the level changes
 
-				}	
+				}
 				else
 				{
-					if(gridSize<=5){	
-						//change grid size		
+					if(gridSize<=5){
+						//change grid size
 						ctrl.changeGrid(gridSize+1);
 						ctrl.changeLevel(1);
 						ctrl.changeValues();
@@ -1399,15 +1392,15 @@ function ProgressCookie() // simply a string that uses a combination of symbols 
 						ctrl.congratulate(3, "Congratulations! You have completed all levels!","More levels coming soon.");
 					}
 
-				}						
+				}
 			}
 			enterNeeded = false;
 			confirm = false;
 		}, false);
-					
+
 	/*** PRESS ENTER ***/
 		window.addEventListener('keyup', function(e)
-		{		
+		{
 			if(enterNeeded){
 				if(e.keyCode === 13){
 					//enterPressed = true;
@@ -1417,11 +1410,11 @@ function ProgressCookie() // simply a string that uses a combination of symbols 
 				    	levelToPlay++;
 						ctrl.changeValues();
 						ctrl.reprint(squareFillColor, lineFillColor, lineFillWidth); //reprints after the level changes
-					}	
+					}
 					else
 					{
-						if(gridSize<=5){	
-							//change grid size		
+						if(gridSize<=5){
+							//change grid size
 							ctrl.changeGrid(gridSize+1);
 							ctrl.changeLevel(1);
 							ctrl.changeValues();
@@ -1432,10 +1425,10 @@ function ProgressCookie() // simply a string that uses a combination of symbols 
 						}
 					}
 				enterNeeded = false;
-				confirm = false;						
+				confirm = false;
 				}
-				
-			}	
+
+			}
 		}, false);
 	//
 
